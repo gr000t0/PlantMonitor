@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/plants/humidity_monitor/components/sensor_service
+# Install script for directory: /home/ubuntu/Documents/PlantMonitor/humidity_monitor/components/sensor_service
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

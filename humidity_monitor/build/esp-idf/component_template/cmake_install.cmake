@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/plants/humidity_monitor/components/component_template
+# Install script for directory: /home/ubuntu/Documents/PlantMonitor/humidity_monitor/components/component_template
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

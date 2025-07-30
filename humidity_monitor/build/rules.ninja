@@ -1841,7 +1841,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_component_template
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake -S/home/ubuntu/plants/humidity_monitor -B/home/ubuntu/plants/humidity_monitor/build
+  command = /usr/bin/cmake -S/home/ubuntu/Documents/PlantMonitor/humidity_monitor -B/home/ubuntu/Documents/PlantMonitor/humidity_monitor/build
   description = Re-running CMake...
   generator = 1
 

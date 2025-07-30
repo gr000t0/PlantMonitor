@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/plants/humidity_monitor/main
+# Install script for directory: /home/ubuntu/Documents/PlantMonitor/humidity_monitor/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

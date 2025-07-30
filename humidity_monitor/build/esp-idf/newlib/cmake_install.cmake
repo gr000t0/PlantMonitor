@@ -34,6 +34,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/ubuntu/plants/humidity_monitor/build/esp-idf/newlib/port/cmake_install.cmake")
+  include("/home/ubuntu/Documents/PlantMonitor/humidity_monitor/build/esp-idf/newlib/port/cmake_install.cmake")
 endif()
 
