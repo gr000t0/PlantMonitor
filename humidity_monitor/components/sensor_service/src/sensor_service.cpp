@@ -11,7 +11,7 @@ std::unique_ptr<SensorService> SensorService::instance = nullptr;
 SensorService& SensorService::getInstance() {
     if (!instance) {
         // Erzeugt die einzige Instanz beim ersten Zugriff
-        instance = std::make_unique<SensorService>();
+        instance.reset(new SensorService());
     }
     return *instance;
 }

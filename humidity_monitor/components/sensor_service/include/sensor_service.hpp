@@ -10,13 +10,6 @@
 
 namespace sensor {
 
-enum dryness_t {
-    DRYNESS_UNKNOWN = 0,
-    DRYNESS_DRY,
-    DRYNESS_WET,
-    DRYNESS_VERY_WET,
-    DRYNESS_VERY_DRY
-} ;
 
 class SensorService {
 
@@ -24,6 +17,7 @@ public:
 static SensorService& getInstance();
 
 void add_sensor(adc_channel_t channel);
+void calibrate_sensor(adc_channel_t channel, int step_size, int range);
 
 private:
 

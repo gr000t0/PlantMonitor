@@ -130,11 +130,12 @@ dryness_t Sensor::get_current_dryness() {
 
 void Sensor::start() {
     if (this->monitor_task_handle == nullptr) {
-        xTaskCreate(&Sensor::monitor_thread, "sensor_monitor", 2048, this, 5, &this->monitor_task_handle);
+        xTaskCreate(&Sensor::taskEntry, "sensor_monitor", 2048, this, 5, &this->monitor_task_handle);
         ESP_LOGI(TAG, "Sensor monitoring started");
     } else {
         ESP_LOGW(TAG, "Sensor monitoring already running");
     }
+}
 
 
 } // namespace sensor

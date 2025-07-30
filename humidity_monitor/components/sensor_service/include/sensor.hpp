@@ -2,10 +2,21 @@
 #include "esp_adc/adc_oneshot.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "sensor_service.hpp"
+
 
 namespace sensor {
+
+    enum dryness_t {
+        DRYNESS_UNKNOWN = 0,
+        DRYNESS_DRY,
+        DRYNESS_WET,
+        DRYNESS_VERY_WET,
+        DRYNESS_VERY_DRY
+    } ;
+    
 class Sensor {
+
+  
 
     public: 
 
@@ -33,6 +44,10 @@ class Sensor {
 
     void monitor_thread(void *arg);
 
+    static void taskEntry(void *arg) {
+        Sensor* sensor = static_cast<Sensor*>(arg);
+        sensor->monitor_thread(arg);
+    }
 
 
     private:
