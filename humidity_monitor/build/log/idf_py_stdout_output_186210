@@ -1,0 +1,21 @@
+[1/10] Linking C static library esp-idf/sensor_service/libsensor_service.a
+[2/10] Performing build step for 'bootloader'
+[1/1] cd /home/ubuntu/plants/humidity_monitor/build/bootloader/esp-idf/esptool_py && /usr/local/src/esp-idf-tools-v5.4/python_env/idf5.4_py3.8_env/bin/python /usr/local/src/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/ubuntu/plants/humidity_monitor/build/bootloader/bootloader.bin
+Bootloader binary size 0x5520 bytes. 0x1ae0 bytes (24%) free.
+[3/8] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+In file included from ../components/sensor_service/include/sensor_service.hpp:2,
+                 from ../main/main.cpp:5:
+/usr/local/src/esp-idf-v5.4/components/driver/deprecated/driver/adc.h:19:2: warning: #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively" [-Wcpp]
+   19 | #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively"
+      |  ^~~~~~~
+[4/8] Linking C static library esp-idf/main/libmain.a
+[5/8] Generating ld/sections.ld
+[6/8] Linking CXX executable humidity_monitor.elf
+[7/8] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32s2 image...
+Merged 2 ELF sections
+Successfully created esp32s2 image.
+Generated /home/ubuntu/plants/humidity_monitor/build/humidity_monitor.bin
+[8/8] cd /home/ubuntu/plants/humidity_monitor/build/esp-idf/esptool_py && /usr/local/src/esp-idf-tools-v5.4/python_env/idf5.4_py3.8_env/bin/python /usr/local/src/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/ubuntu/plants/humidity_monitor/build/partition_table/partition-table.bin /home/ubuntu/plants/humidity_monitor/build/humidity_monitor.bin
+humidity_monitor.bin binary size 0x2db10 bytes. Smallest app partition is 0x100000 bytes. 0xd24f0 bytes (82%) free.
