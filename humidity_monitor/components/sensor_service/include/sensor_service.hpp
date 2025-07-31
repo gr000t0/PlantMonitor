@@ -5,6 +5,7 @@
 #include "freertos/task.h"
 #include "esp_log.h"
 #include "sensor.hpp"
+#include "esp_console.h"
 #include <map>
 #include <memory>
 
@@ -18,7 +19,16 @@ static SensorService& getInstance();
 
 void add_sensor(adc_channel_t channel);
 void calibrate_sensor(adc_channel_t channel, int step_size, int range);
+Sensor& get_sensor(adc_channel_t channel) {
+    return *sensors[channel];
+}
 
+
+void start_monitoring();
+
+
+
+void register_commands();
 private:
 
 static std::unique_ptr<SensorService> instance;

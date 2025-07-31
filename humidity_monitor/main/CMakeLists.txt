@@ -5,4 +5,5 @@ idf_component_register(SRCS "main.cpp"
                         driver
                         esp_adc
                         freertos
-                        sensor_service)
+                        sensor_service
+                        console)

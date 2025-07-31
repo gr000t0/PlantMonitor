@@ -1,0 +1,6 @@
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32s2
+-- Configuring incomplete, errors occurred!
+See also "/home/ubuntu/Documents/PlantMonitor/humidity_monitor/build/CMakeFiles/CMakeOutput.log".
+FAILED: build.ninja 
+/usr/bin/cmake -S/home/ubuntu/Documents/PlantMonitor/humidity_monitor -B/home/ubuntu/Documents/PlantMonitor/humidity_monitor/build
