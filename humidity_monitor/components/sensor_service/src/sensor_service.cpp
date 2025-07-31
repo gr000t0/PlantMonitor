@@ -1,5 +1,7 @@
 #include "sensor_service.hpp"
 #include "esp_log.h"
+#include "esp_err.h"
+#include <cstring>
 
 
 static const char* TAG = "sensor_service";
@@ -91,39 +93,49 @@ static int set_wet_threshold_cmd(int argc, char** argv) {
 }
 
 void SensorService::register_commands() {
-    esp_console_cmd_t cmd;
+    esp_console_cmd_t step_cmd;
+    memset(&step_cmd, 0, sizeof(esp_console_cmd_t));
+    step_cmd.command = "set_step_size";
+    step_cmd.help = "Set the step size for a sensor";
+    step_cmd.hint = "<channel> <step_size>";
+    step_cmd.func = &set_step_size_cmd;
+    ESP_ERROR_CHECK(esp_console_cmd_register(&step_cmd));
     
-    cmd.command = "set_step_size";
-    cmd.help = "Set the step size for a sensor";
-    cmd.hint = "<channel> <step_size>";
-    cmd.func = &set_step_size_cmd;
-    ESP_ERROR_CHECK(esp_console_cmd_register(&cmd));
-    
-    cmd.command = "set_range";
-    cmd.help = "Set the range for a sensor";
-    cmd.hint = "<channel> <range>";
-    cmd.func = &set_range_cmd;
-    ESP_ERROR_CHECK(esp_console_cmd_register(&cmd));
-    
-    cmd.command = "set_dry_threshold";
-    cmd.help = "Set the dry threshold for a sensor";
-    cmd.hint = "<channel>";
-    cmd.func = &set_dry_threshold_cmd;
-    ESP_ERROR_CHECK(esp_console_cmd_register(&cmd));
-    
-    cmd.command = "set_wet_threshold";
-    cmd.help = "Set the wet threshold for a sensor";
-    cmd.hint = "<channel>";
-    cmd.func = &set_wet_threshold_cmd;
-    ESP_ERROR_CHECK(esp_console_cmd_register(&cmd));
+    esp_console_cmd_t range_cmd;
+    memset(&range_cmd, 0, sizeof(esp_console_cmd_t));
+    range_cmd.command = "set_range";
+    range_cmd.help = "Set the range for a sensor";
+    range_cmd.hint = "<channel> <range>";
+    range_cmd.func = &set_range_cmd;
+    ESP_ERROR_CHECK(esp_console_cmd_register(&range_cmd));
 
 
-    cmd.command = "start_monitoring";
-    cmd.help = "Start monitoring all sensors";
-    cmd.hint = "";
-    cmd.func = &start_monitoring_cmd;
-    ESP_ERROR_CHECK(esp_console_cmd_register(&cmd));
+     esp_console_cmd_t dry_cmd;
+    memset(&dry_cmd, 0, sizeof(esp_console_cmd_t));
+    dry_cmd.command = "set_dry_threshold";
+    dry_cmd.help = "Set the dry threshold for a sensor";
+    dry_cmd.hint = "<channel>";
+    dry_cmd.func = &set_dry_threshold_cmd;
+    ESP_ERROR_CHECK(esp_console_cmd_register(&dry_cmd));
     
+
+    esp_console_cmd_t wet_cmd;
+    memset(&wet_cmd, 0, sizeof(esp_console_cmd_t));
+    wet_cmd.command = "set_wet_threshold";
+    wet_cmd.help = "Set the wet threshold for a sensor";
+    wet_cmd.hint = "<channel>";
+    wet_cmd.func = &set_wet_threshold_cmd;
+    ESP_ERROR_CHECK(esp_console_cmd_register(&wet_cmd));
+
+
+    esp_console_cmd_t start_cmd;
+    memset(&start_cmd, 0, sizeof(esp_console_cmd_t));
+    start_cmd.command = "start_monitoring";
+    start_cmd.help = "Start monitoring all sensors";
+    start_cmd.hint = "";
+    start_cmd.func = &start_monitoring_cmd;
+    ESP_ERROR_CHECK(esp_console_cmd_register(&start_cmd));
+
 }
 
 } // namespace sensor

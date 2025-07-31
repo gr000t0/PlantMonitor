@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "humidity_monitor",
-    "project_version":    "a7bd046-dirty",
+    "project_version":    "cdc07fc-dirty",
     "project_path":       "/home/ubuntu/Documents/PlantMonitor/humidity_monitor",
     "idf_path":           "/usr/local/src/esp-idf-v5.4",
     "build_dir":          "/home/ubuntu/Documents/PlantMonitor/humidity_monitor/build",
